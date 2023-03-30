@@ -17,7 +17,7 @@ export const Form = (props) => {
 
   useEffect(() => {
     // Check if the form is complete
-    const isValidEmail = (email) => {
+    const emailValidator = (email) => {
       if (!email.includes("@")) {
         return false;
       }
@@ -37,14 +37,11 @@ export const Form = (props) => {
 
       return true;
     };
-
+    const isEmailValid = emailValidator(email);
     const isFormComplete =
-      name !== "" &&
-      email !== "" &&
-      password !== "" &&
-      selectedSkills.length > 0;
+      name !== "" && password !== "" && selectedSkills.length > 0;
 
-    setIsFormValid(isValidEmail && isFormComplete);
+    setIsFormValid(isEmailValid && isFormComplete);
   }, [name, email, password, selectedSkills]);
 
   const handleSelectedSkill = (e) => {
