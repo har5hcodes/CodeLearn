@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #78aeff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-content: center;
+  gap: 8rem;
+  padding: 0 20rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.infoContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.infoHeader {
   color: white;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.infoDescription {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.formContainer {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 0.75rem;
+  padding: 0.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 7px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+input,
+select {
+  width: 100%;
+  height: 4rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  padding: 0 1.25rem;
+  margin-bottom: 1rem;
+  font-size: medium;
+}
+
+button {
+  width: 100%;
+  height: 3.6rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: #37cc8a;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.75rem;
+}
+
+button:disabled,
+button[disabled] {
+  width: 100%;
+  height: 3.6rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: #b5b5b5;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.msgContainer {
+  background: #f00000;
+  color: white;
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 1px 7px 7px 1px rgba(0, 0, 0, 0.3);
+}
+.msgHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.msgHeader span {
+  font-weight: 800;
+}
+
+.selectedSkills {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+}
+
+.selectedSkill {
+  background: #dcdcdc;
+  color: #777777;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.removeSkillBtn {
+  background: none;
+  border: none;
+  color: #777777;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
 }

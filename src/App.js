@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { Form } from "./components/Form";
+import { InfoSection } from "./components/InfoSection";
+import MessageSection from "./components/MessageSection";
 
 function App() {
+  const [message1, setMessage1] = useState(true);
+  const [message2, setMessage2] = useState(false);
+
+  const handleMessage = () => {
+    setMessage1(!message1);
+    setMessage2(!message2);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <InfoSection />
+        <div>
+          <MessageSection message1={message1} message2={message2} />
+          <Form handleMessage={handleMessage} />
+        </div>
+      </div>
+    </>
   );
 }
 
